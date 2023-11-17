@@ -3,7 +3,8 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
     <RootNamespace>NVorbis</RootNamespace>
-    <Description>A fully managed implementation of a Xiph.org Foundation Ogg Vorbis decoder.</Description>
+    <Description>Fork of A fully managed implementation of a Xiph.org Foundation Ogg Vorbis decoder.</Description>
+    <Authors>Andrew Wards, Yellow Dog Man Studios</Authors>
     <Company>Andrew Ward</Company>
     <Copyright>Copyright © Andrew Ward 2021</Copyright>
     <AssemblyVersion>0.10.4.1</AssemblyVersion>
@@ -11,14 +12,14 @@
     <Authors>Andrew Ward</Authors>
     <Version>0.10.4.1</Version>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/NVorbis/NVorbis</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Yellow-Dog-Man/NVorbis</PackageProjectUrl>
     <PackageReleaseNotes>- Fix seeking issues
 - Fix issue where loading a file would throw due to split packets in the header pages</PackageReleaseNotes>
     <PackageTags>ogg vorbis xiph audio c# sound .NET</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <RepositoryUrl>https://github.com/NVorbis/NVorbis</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Yellow-Dog-Man/NVorbis</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>

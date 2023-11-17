@@ -8,22 +8,19 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    env:
+      VERSION: ${{ github.event.release.tag_name }}
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 3.1.100
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build --configuration Release -p:Version=${{ env.VERSION }}
       - name: Test with dotnet
         run: dotnet test
-  deploy:
-    needs: build
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v1
       - name: Pack nuget Package
-        run: dotnet pack --configuration Release
+        run: dotnet pack --configuration Release -p:Version=${{ env.VERSION }} --output nupkgs
       - name: Push package to nuget
-        run: dotnet nuget push **/*.nupkg --api-key ${{ secrets.NUGET_DEPLOY_KEY }} --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push nupkgs\*.nupkg -k ${{ secrets.NUGET_TOKEN }} -s https://api.nuget.org/v3/index.json
