@@ -1,6 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <PackageId>YellowDogMan.NVorbis</PackageId>
+
     <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
     <RootNamespace>NVorbis</RootNamespace>
     <Description>Fork of A fully managed implementation of a Xiph.org Foundation Ogg Vorbis decoder.</Description>
